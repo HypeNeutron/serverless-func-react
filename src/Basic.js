@@ -24,7 +24,7 @@ const Basic = () => {
   if (loading) {
     return (
       <section className="section section-center">
-        <h4>Loading.....</h4>
+        <h2>Loading.....</h2>
       </section>
     );
   }
