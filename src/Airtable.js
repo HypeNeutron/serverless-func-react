@@ -6,18 +6,29 @@ const urlProducts = '/api/products';
 
 const Airtable = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
   const fetchData = async () => {
     try {
       const { data } = await axios.get(urlProducts);
       setProducts(data);
     } catch (error) {
       <h4> `link API DATA not Available info:${error}`</h4>;
+      setLoading(false);
     }
+    setLoading(false);
   };
 
   useEffect(() => {
     fetchData();
   }, []);
+
+  if (loading) {
+    return (
+      <section className="section section-center">
+        <h2>Loading...</h2>
+      </section>
+    );
+  }
 
   return (
     <section className="section section-center">

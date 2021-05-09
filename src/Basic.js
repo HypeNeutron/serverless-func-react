@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const mainUrl = 'https://temp-serverless.netlify.app/api/2-basic-api';
 const Basic = () => {
+  const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
 
   const fetchData = async () => {
@@ -11,13 +12,22 @@ const Basic = () => {
       setProducts(data);
     } catch (error) {
       <h4> `link API DATA not Available info:${error}`</h4>;
+      setLoading(false);
     }
+    setLoading(false);
   };
 
   useEffect(() => {
     fetchData();
   }, []);
 
+  if (loading) {
+    return (
+      <section className="section section-center">
+        <h4>Loading.....</h4>
+      </section>
+    );
+  }
   return (
     <section className="section section-center">
       <div className="title">
