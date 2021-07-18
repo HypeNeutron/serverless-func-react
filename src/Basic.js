@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const mainUrl = 'https://temp-serverless.netlify.app/api/2-basic-api';
+const mainUrl = 'https://temp-serverless.netlify.app/api/2-basic-api'; // Form Vanilla Netlify
 const Basic = () => {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);

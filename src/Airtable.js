@@ -24,29 +24,27 @@ const Airtable = () => {
 
   if (loading) {
     return (
-      <section className="section section-center">
+      <section className='section section-center'>
         <h2>Loading...</h2>
       </section>
     );
   }
 
   return (
-    <section className="section section-center">
-      <div className="title">
+    <section className='section section-center'>
+      <div className='title'>
         <h2>Airtable</h2>
-        <div className="title-underline"></div>
+        <div className='title-underline'></div>
       </div>
-      <div className="products">
+      <div className='products'>
         {products.map((product) => {
-          const {
-            id, url, name, price,
-          } = product;
+          const { id, url, name, price } = product;
           return (
-            <Link to={`/${id}`} className="product" key={id}>
+            <Link to={`/${id}`} className='product' key={id}>
               <img src={url} alt={name} />
-              <div className="info">
+              <div className='info'>
                 <h5>{name}</h5>
-                <h5 className="price">${price}</h5>
+                <h5 className='price'>${price}</h5>
               </div>
             </Link>
           );
