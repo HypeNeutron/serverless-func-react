@@ -13,8 +13,8 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'airbnb-base/legacy',
-    'prettier',
     'plugin:prettier/recommended',
+    'prettier',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -23,8 +23,9 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', 'react-hooks', 'better-styled-components', 'prettier'],
+  plugins: ['react', 'react-hooks', 'prettier'],
   rules: {
+    'prettier/prettier': 0,
     'react/prop-types': 'warn',
     'no-unused-vars': 'warn',
     'linebreak-style': [0, 'error', 'windows'],
