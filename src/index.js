@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Product from './Product';
+import SingleProductATB from './page/SingleProductATB';
 import App from './App';
 
 ReactDOM.render(
@@ -12,7 +12,7 @@ ReactDOM.render(
         <App />
       </Route>
       <Route path='/:productID'>
-        <Product />
+        <SingleProductATB />
       </Route>
     </Router>
   </React.StrictMode>,

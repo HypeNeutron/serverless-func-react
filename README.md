@@ -1,23 +1,31 @@
-# Netlify TOML for create-react-app
+# Netlify Serverless Function with Netlify Functions
 
+## airtable database with airtable-node
+
+### Netlify Deploy Build [ Show Advanced ] New Available All in .env
+
+## Netlify TOML for create-react-app
+
+```toml
+# For build
 [build]
+command = 'yarn run build'
+functions = './functions'
+pubilch = '/build'
 
-- command = 'npm run build'
-- publish = '/build'
-- functions = './functions'
-
+# for api
 [[redirects]]
+from = '/api/*'
+status = 200
+to = '/.netlify/functions/:splat'
 
-- from = '/api/\*'
-- to = '/.netlify/functions/:splat'
-- status = 200
-
+# Home
 [[redirects]]
+from = '/*'
+status = 200
+to = '/index.html'
+```
 
-- from = '/\*'
-- to = '/index.html'
-- status = 200
+## Build Command
 
-## build Command
-
-"build": "CI= react-scripts build"
+`"build": "CI= react-scripts build"`

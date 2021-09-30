@@ -1,6 +1,6 @@
 import React from 'react';
-import Basic from './Basic';
-import Airtable from './Airtable';
+import Basic from './components/Basic';
+import Airtable from './components/Airtable';
 
 function App() {
   return (

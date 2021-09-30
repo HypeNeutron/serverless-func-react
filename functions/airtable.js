@@ -5,9 +5,9 @@ const airtable = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY })
   .base('apprg30DdBMUs9MbE')
   .table('products');
 
-exports.handler = async (event, context) => {
+exports.handler = async (event) => {
+  //* If passes single product-------------
   const { id } = event.queryStringParameters;
-  //* If passes id each of item
   if (id) {
     try {
       const product = await airtable.retrieve(id);
@@ -17,6 +17,7 @@ exports.handler = async (event, context) => {
           body: `No product with id:${id}`,
         };
       }
+
       return {
         statusCode: 200,
         body: JSON.stringify(product),
@@ -29,6 +30,7 @@ exports.handler = async (event, context) => {
     }
   }
 
+  //* all product--------------------------
   try {
     const { records } = await airtable.list();
     const products = records.map((product) => {
@@ -43,6 +45,7 @@ exports.handler = async (event, context) => {
         price,
       };
     });
+
     return {
       statusCode: 200,
       body: JSON.stringify(products),

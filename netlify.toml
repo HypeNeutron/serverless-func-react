@@ -1,14 +1,16 @@
+# For build
 [build]
-
 command = 'yarn run build'
 functions = './functions'
 pubilch = '/build'
 
+# for api
 [[redirects]]
 from = '/api/*'
 status = 200
 to = '/.netlify/functions/:splat'
 
+# Home
 [[redirects]]
 from = '/*'
 status = 200
