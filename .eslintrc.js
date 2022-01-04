@@ -25,7 +25,12 @@ module.exports = {
   },
   plugins: ['react', 'react-hooks', 'prettier'],
   rules: {
-    'prettier/prettier': 'off',
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
     'no-param-reassign': 'warn',
     'no-console': 'warn',
     'no-unused-vars': 'off',
