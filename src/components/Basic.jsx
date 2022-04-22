@@ -1,6 +1,7 @@
 import React from 'react';
 import Loading from './Loading';
 import useFetch from '../hook/useFetch';
+
 const basicApi = '/api/basic-api';
 
 function Basic() {
@@ -11,10 +12,10 @@ function Basic() {
   }
 
   return (
-    <section className='section section-center'>
-      <div className='title'>
+    <section className="section section-center">
+      <div className="title">
         <h2>basic setup</h2>
-        <div className='title-underline'></div>
+        <div className="title-underline" />
         <div className={`${errorMsg.status ? 'products--error' : 'products'}`}>
           {errorMsg.status ? (
             <h4>{errorMsg.msg}</h4>
@@ -27,10 +28,10 @@ function Basic() {
                 name,
               } = product;
               return (
-                <article className='product' key={id}>
+                <article className="product" key={id}>
                   <img src={url} alt={name} />
                   <h5>{name}</h5>
-                  <h5 className='price'>${price}</h5>
+                  <h5 className="price">${price}</h5>
                 </article>
               );
             })

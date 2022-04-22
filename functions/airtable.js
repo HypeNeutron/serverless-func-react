@@ -5,8 +5,14 @@ const airtable = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY })
   .base('apprg30DdBMUs9MbE')
   .table('products');
 
-exports.handler = async (event) => {
-  //* If passes single product-------------
+//# Retrieve Data on airtable-------------
+exports.handler = async (event, context, cb) => {
+  // GET single product--------------------------
+  //---------------------------------------------
+  //  const method = event.httpMethod
+  // const {<someData>} JSON.parse(event.body)
+  //---------------------------------------------
+
   const { id } = event.queryStringParameters;
   if (id) {
     try {
@@ -29,8 +35,7 @@ exports.handler = async (event) => {
       };
     }
   }
-
-  //* all product--------------------------
+  // GET all product--------------------------
   try {
     const { records } = await airtable.list();
     const products = records.map((product) => {
@@ -45,7 +50,6 @@ exports.handler = async (event) => {
         price,
       };
     });
-
     return {
       statusCode: 200,
       body: JSON.stringify(products),

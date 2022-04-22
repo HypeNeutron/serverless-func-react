@@ -203,6 +203,10 @@ p {
 Products
 ===============
 */
+.error {
+  padding: 5em;
+  padding-top: 10em;
+}
 
 .title {
   text-align: center;
