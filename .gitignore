@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# Private Kept
+/note functions
+
 # testing
 /coverage
 
