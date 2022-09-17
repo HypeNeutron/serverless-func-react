@@ -1,6 +1,6 @@
 # For build
 [build]
-command = 'pnpm run build'
+command = 'yarn run build'
 functions = './functions'
 pubilch = '/build'
 
