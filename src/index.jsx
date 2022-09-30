@@ -14,6 +14,5 @@ root.render(
         <Route path="/:productID" element={<SingleProductATB />} />
       </Routes>
     </Router>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
